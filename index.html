@@ -1,1153 +1,230 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mr.Upset">
-<meta property="og:url" content="https://mrupset.github.io/index.html">
-<meta property="og:site_name" content="Mr.Upset">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr.Upset">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://mrupset.github.io/"/>
-
-
-
-
-
-  <title> Mr.Upset </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yong-Qiang Tan — Computer Vision</title>
+  <meta name="description" content="Yong-Qiang Tan, Senior Algorithm Engineer at Dewu. Computer vision: 3D Gaussian Splatting, LLM engineering, and saliency models published at ECCV, CVPR, and TPAMI.">
+  <meta name="author" content="Yong-Qiang Tan">
+  <link rel="canonical" href="https://tansor.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Yong-Qiang Tan — Computer Vision">
+  <meta property="og:description" content="Computer vision, from research to production. 3D Gaussian Splatting, LLM engineering, and visual understanding.">
+  <meta property="og:url" content="https://tansor.github.io/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#1733E0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Mr.Upset</span>
-        <span class="logo-line-after"><i></i></span>
+  <div class="shell">
+    <header class="top">
+      <a class="brand" href="#top" aria-label="Yong-Qiang Tan, back to top">
+        <svg class="mark" width="22" height="22" viewBox="0 0 20 20" role="img" aria-label="Dice mark">
+          <rect width="20" height="20" rx="4.5" fill="currentColor"/>
+          <circle cx="6.4" cy="6.4" r="1.35" fill="#fff"/>
+          <circle cx="10" cy="10" r="1.35" fill="#fff"/>
+          <circle cx="13.6" cy="13.6" r="1.35" fill="#fff"/>
+        </svg>
+        <span>Yong-Qiang Tan</span>
       </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://mrupset.github.io/2017/05/12/linear_algebra/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mr.Upset">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Upset">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/12/linear_algebra/" itemprop="url">
-                  线性代数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-12T11:52:45+08:00">
-                2017-05-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <center> 整理了基本的线性代数定义及公式，以备查用 </center>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/12/linear_algebra/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://mrupset.github.io/2017/04/08/probability_theory_and_mathematical_statistics/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mr.Upset">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Upset">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/08/probability_theory_and_mathematical_statistics/" itemprop="url">
-                  概率论与数理统计
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-08T19:53:43+08:00">
-                2017-04-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <center> 书本知识归纳备忘 </center>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/08/probability_theory_and_mathematical_statistics/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://mrupset.github.io/2017/03/29/linear_model/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mr.Upset">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Upset">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/29/linear_model/" itemprop="url">
-                  线性模型
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T09:04:54+08:00">
-                2017-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <center> 二元/多元/线性回归 广义线性模型 对数几率回归(LR) </center>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/29/linear_model/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://mrupset.github.io/2017/03/27/probability_distribution/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mr.Upset">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Upset">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/27/probability_distribution/" itemprop="url">
-                  几种常见的概率分布
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T21:41:51+08:00">
-                2017-03-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <center> 整理了一些常见的概率分布 </center>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/27/probability_distribution/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://mrupset.github.io/2017/03/27/Singleton/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mr.Upset">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Upset">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/27/Singleton/" itemprop="url">
-                  Singleton
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T15:57:35+08:00">
-                2017-03-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <center>Java单例模式</center>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/27/Singleton/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.png"
-               alt="Mr.Upset" />
-          <p class="site-author-name" itemprop="name">Mr.Upset</p>
-           
-              <p class="site-description motion-element" itemprop="description"></p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
+    <div class="layout" id="top">
+      <aside class="rail" aria-label="Section index">
+        <nav class="rail-inner">
+          <a href="#about" data-spy="about"><span>01</span>About</a>
+          <a href="#work" data-spy="work"><span>02</span>Work</a>
+          <a href="#publications" data-spy="publications"><span>03</span>Publications</a>
+          <a href="#experience" data-spy="experience"><span>04</span>Experience</a>
+          <a href="#contact" data-spy="contact"><span>05</span>Contact</a>
         </nav>
+      </aside>
 
-        
+      <main id="main">
+        <section class="hero" aria-labelledby="name">
+          <p class="eyebrow"><i aria-hidden="true"></i>Shanghai, China<span class="slash">/</span>Senior Algorithm Engineer at Dewu</p>
+          <h1 class="name" id="name"><span>Yong-Qiang</span> <span>Tan</span></h1>
+          <p class="statement">Computer vision, from research to production.</p>
+          <p class="sub">100K-parameter saliency models, road graphs traced point by point, and now 3D Gaussian Splatting at industrial scale.</p>
+        </section>
 
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/MrUpset" target="_blank" title="Github">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  Github
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/yqtan" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-info"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-          
-        </div>
+        <section class="sec" id="about" aria-labelledby="about-title">
+          <div class="sec-head">
+            <h2 id="about-title"><span class="n">01</span><span class="t">About</span></h2>
+          </div>
+          <div class="about">
+            <div class="about-text">
+              <p>I am a senior algorithm engineer at <b>Dewu</b> in Shanghai, where I work on 3D Gaussian Splatting for footwear, LLM engineering, and visual content understanding.</p>
+              <p>Before Dewu I spent two years at <b>Tencent YouTu Lab</b> on content moderation and computer vision, and earned my M.S. at <b>Nankai University</b> with Ming-Ming Cheng, working on efficient saliency models and road graph extraction.</p>
+            </div>
+            <div class="focus">
+              <h3 class="focus-title">Focus</h3>
+              <ol class="focus-list">
+                <li><span class="fnum">01</span><div><b>3D Gaussian Splatting</b><span>Reconstructing products as renderable 3D assets.</span></div></li>
+                <li><span class="fnum">02</span><div><b>LLM Engineering</b><span>Putting large models to work inside production systems.</span></div></li>
+                <li><span class="fnum">03</span><div><b>Visual Content Understanding</b><span>Content moderation and product understanding at scale.</span></div></li>
+              </ol>
+            </div>
+          </div>
+        </section>
 
-        
-        
+        <section class="sec" id="work" aria-labelledby="work-title">
+          <div class="sec-head">
+            <h2 id="work-title"><span class="n">02</span><span class="t">Selected Work</span></h2>
+            <span class="meta">Dewu · 2023 — Now</span>
+          </div>
+          <ul class="gallery">
+            <li><img src="assets/work-shoe-white.jpg" alt="White low-top sneaker with a rose-gold swoosh, shown as a 3D asset in the Dewu app." width="720" height="961"></li>
+            <li><img src="assets/work-shoe-black.jpg" alt="Black running shoe with teal accents, shown as a 3D asset in the Dewu app." width="720" height="961"></li>
+            <li><img src="assets/work-shoe-blue.jpg" alt="Blue basketball shoe with a white swoosh, shown as a 3D asset in the Dewu app." width="720" height="961"></li>
+          </ul>
+          <p class="figcap"><span class="work-label">3D Gaussian Splatting · Dewu</span><span class="work-note">Footwear reconstructed as renderable 3D assets for the Dewu 3D Space.</span><span class="work-hint">In the app · 得物 → 鞋 → 3D 空间</span></p>
+        </section>
 
-        
-        
+        <section class="sec" id="publications" aria-labelledby="pub-title">
+          <div class="sec-head">
+            <h2 id="pub-title"><span class="n">03</span><span class="t">Selected Publications</span></h2>
+            <div class="more-group">
+              <a class="more" href="https://scholar.google.com/citations?user=eMGIZ-IAAAAJ" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
+              <a class="more" href="https://dblp.org/pid/260/6709" target="_blank" rel="noopener">DBLP <span aria-hidden="true">↗</span></a>
+              <a class="more" href="https://orcid.org/0000-0002-0481-6715" target="_blank" rel="noopener">ORCID <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
 
-        
+          <ol class="pubs">
+            <li>
+              <article class="pub" style="--fig:url('gconv.png')">
+                <span class="pyear">’20</span>
+                <div class="pbody">
+                  <span class="pvenue">ECCV 2020</span>
+                  <a class="ptitle" href="https://link.springer.com/chapter/10.1007/978-3-030-58539-6_42" target="_blank" rel="noopener">Highly Efficient Salient Object Detection with 100K Parameters</a>
+                  <span class="pauthors">Gao, <b>Tan</b>, Cheng, Lu, Chen, Yan</span>
+                  <span class="plinks">
+                    <a class="plink" href="https://mftp.mmcheng.net/Papers/20EccvSal100k.pdf" target="_blank" rel="noopener" aria-label="PDF: Highly Efficient Salient Object Detection with 100K Parameters">
+                      <svg class="picon" width="11" height="13" viewBox="0 0 12 14" aria-hidden="true" focusable="false"><path d="M1.5 1.5h5.5l3.5 3.5v7.5h-9z" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M7 1.5V5h3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>PDF
+                    </a>
+                    <a class="plink" href="https://github.com/MCG-NKU/SOD100K" target="_blank" rel="noopener" aria-label="Code on GitHub: Highly Efficient Salient Object Detection with 100K Parameters">
+                      <svg class="picon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M4 2.5 1.5 6 4 9.5M8 2.5 10.5 6 8 9.5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Code
+                    </a>
+                  </span>
+                </div>
+                <span class="pcites"><b>296</b><span>citations</span></span>
+                <span class="parrow" aria-hidden="true">↗</span>
+              </article>
+            </li>
+            <li>
+              <article class="pub" style="--fig:url('vecroad-bg.jpg')">
+                <span class="pyear">’20</span>
+                <div class="pbody">
+                  <span class="pvenue">CVPR 2020 <em class="badge">First author</em></span>
+                  <a class="ptitle" href="https://ieeexplore.ieee.org/abstract/document/9157398" target="_blank" rel="noopener">VecRoad: Point-based Iterative Graph Exploration for Road Graphs Extraction</a>
+                  <span class="pauthors"><b>Tan</b>, Gao, Li, Cheng, Ren</span>
+                  <span class="plinks">
+                    <a class="plink" href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Tan_VecRoad_Point-Based_Iterative_Graph_Exploration_for_Road_Graphs_Extraction_CVPR_2020_paper.pdf" target="_blank" rel="noopener" aria-label="PDF: VecRoad: Point-based Iterative Graph Exploration for Road Graphs Extraction">
+                      <svg class="picon" width="11" height="13" viewBox="0 0 12 14" aria-hidden="true" focusable="false"><path d="M1.5 1.5h5.5l3.5 3.5v7.5h-9z" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M7 1.5V5h3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>PDF
+                    </a>
+                    <a class="plink" href="https://github.com/tansor/VecRoad" target="_blank" rel="noopener" aria-label="Code on GitHub: VecRoad">
+                      <svg class="picon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M4 2.5 1.5 6 4 9.5M8 2.5 10.5 6 8 9.5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Code
+                    </a>
+                    <a class="plink" href="https://www.youtube.com/watch?v=xs6Atib6KtY" target="_blank" rel="noopener" aria-label="Video: VecRoad">
+                      <svg class="picon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M4.2 2.6 9.6 6l-5.4 3.4z" fill="currentColor"/></svg>Video
+                    </a>
+                  </span>
+                </div>
+                <span class="pcites"><b>161</b><span>citations</span></span>
+                <span class="parrow" aria-hidden="true">↗</span>
+              </article>
+            </li>
+            <li>
+              <article class="pub" style="--fig:url('gconv.png')">
+                <span class="pyear">’21</span>
+                <div class="pbody">
+                  <span class="pvenue">TPAMI 2021</span>
+                  <a class="ptitle" href="https://ieeexplore.ieee.org/abstract/document/9523773" target="_blank" rel="noopener">A Highly Efficient Model to Study the Semantics of Salient Object Detection</a>
+                  <span class="pauthors">Cheng, Gao, Borji, <b>Tan</b>, Lin, Wang</span>
+                  <span class="plinks">
+                    <a class="plink" href="https://mftp.mmcheng.net/Papers/21PAMI-Sal100K.pdf" target="_blank" rel="noopener" aria-label="PDF: A Highly Efficient Model to Study the Semantics of Salient Object Detection">
+                      <svg class="picon" width="11" height="13" viewBox="0 0 12 14" aria-hidden="true" focusable="false"><path d="M1.5 1.5h5.5l3.5 3.5v7.5h-9z" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M7 1.5V5h3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>PDF
+                    </a>
+                    <a class="plink" href="https://github.com/MCG-NKU/SOD100K" target="_blank" rel="noopener" aria-label="Code on GitHub: A Highly Efficient Model to Study the Semantics of Salient Object Detection">
+                      <svg class="picon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M4 2.5 1.5 6 4 9.5M8 2.5 10.5 6 8 9.5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Code
+                    </a>
+                  </span>
+                </div>
+                <span class="pcites"><b>131</b><span>citations</span></span>
+                <span class="parrow" aria-hidden="true">↗</span>
+              </article>
+            </li>
+          </ol>
+        </section>
 
+        <section class="sec" id="experience" aria-labelledby="exp-title">
+          <div class="sec-head">
+            <h2 id="exp-title"><span class="n">04</span><span class="t">Experience</span></h2>
+          </div>
+          <ol class="exps">
+            <li style="--logo:url('logo-dewu.png'); --logo-op:.22">
+              <span class="eyears">2023 — Now</span>
+              <div class="ebody"><b>Dewu</b><span>Senior Algorithm Engineer · 3DGS, LLM Engineering, Computer Vision</span></div>
+              <span class="eloc">Shanghai</span>
+            </li>
+            <li style="--logo:url('logo-tencent.png'); --logo-op:.45">
+              <span class="eyears">2021 — 2023</span>
+              <div class="ebody"><b>Tencent YouTu Lab</b><span>Algorithm Engineer · Content Moderation, Computer Vision</span></div>
+              <span class="eloc">Shanghai</span>
+            </li>
+            <li style="--logo:url('logo-nankai.png'); --logo-op:.45">
+              <span class="eyears">2019 — 2021</span>
+              <div class="ebody"><b>Nankai University</b><span>M.S. Computer Science · Advisor: Ming-Ming Cheng</span></div>
+              <span class="eloc">Tianjin</span>
+            </li>
+            <li style="--logo:url('logo-xidian.png'); --logo-op:.45">
+              <span class="eyears">2014 — 2018</span>
+              <div class="ebody"><b>Xidian University</b><span>B.Eng. Software Engineering</span></div>
+              <span class="eloc">Xi’an</span>
+            </li>
+          </ol>
+        </section>
 
-      </section>
+        <section class="sec" id="contact" aria-labelledby="contact-title">
+          <div class="sec-head">
+            <h2 id="contact-title"><span class="n">05</span><span class="t">Contact</span></h2>
+          </div>
+          <div class="contact">
+            <p class="contact-big">Let’s talk computer vision, 3DGS, and LLMs.</p>
+            <div class="contact-links">
+              <button class="email" type="button" data-email="yoqitan@gmail.com">
+                yoqitan@gmail.com <span aria-hidden="true">↗</span>
+                <span class="copied" role="status" aria-live="polite"></span>
+              </button>
+              <a class="ext" href="https://scholar.google.com/citations?user=eMGIZ-IAAAAJ" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
+              <a class="ext" href="https://dblp.org/pid/260/6709" target="_blank" rel="noopener">DBLP <span aria-hidden="true">↗</span></a>
+              <a class="ext" href="https://orcid.org/0000-0002-0481-6715" target="_blank" rel="noopener">ORCID <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </section>
 
-      
-
-      
-
+        <footer class="foot">
+          <span>© <span id="year">2026</span> Yong-Qiang Tan</span>
+          <span>Shanghai · Last updated November 2026</span>
+        </footer>
+      </main>
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Mr.Upset</span>
-</div>
-
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-
-
-  
-
+  <script src="assets/main.js" defer></script>
 </body>
 </html>
